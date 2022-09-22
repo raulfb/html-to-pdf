@@ -29,7 +29,7 @@ En el archivo html debemos de poner entre "{{}}" los valores que queramos substi
 Para crear comentarios:
 
 ```html
- {#    Comentario#}
+ {#Comentario#}
  ```
  
 ## Notas

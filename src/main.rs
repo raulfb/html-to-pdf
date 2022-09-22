@@ -2,8 +2,6 @@ use wkhtmltopdf::*;
 use std::fs;
 use minijinja::{Environment, context};
 
-
-
 #[tokio::main]
 async fn main() {
     // Leemos la plantilla html
@@ -32,6 +30,6 @@ async fn main() {
 
     // Guardamos el pdf
     pdfout.save("../pdf/prueba.pdf").expect("Error al guardar el pdf!");
-    println!("PDF guardado correctamente como: factura.pdf");
+    println!("PDF guardado correctamente como: prueba.pdf");
     
 }
