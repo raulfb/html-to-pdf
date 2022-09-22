@@ -20,11 +20,20 @@ En la carpeta /pdf es donde se guardará el pdf.
 ## Minijinja
 
 En el archivo html debemos de poner entre "{{}}" los valores que queramos substituir. Por ejemplo:
+
 ```html
     <p>Nombre: {{nombre}}</p>
     <p>Apellidos: {{apellidos}}</p>
     <p>Edad:{{edad}}</p>
 ```
+Para crear comentarios:
+
+```html
+ {#    Comentario#}
+ ```
+ 
+## Notas
+Para que funcione correctamente hay que ejecutar el comando cargo run desde /src
 
 ## Documentación
 [Minijinja](https://docs.rs/minijinja/latest/minijinja/index.html)
