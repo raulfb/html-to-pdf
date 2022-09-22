@@ -23,9 +23,9 @@ En la carpeta /pdf es donde se guardará el pdf.
 En el archivo html debemos de poner entre "{{}}" los valores que queramos substituir. Por ejemplo:
 
 ```html
-    <p>Nombre: {{nombre}}</p>
-    <p>Apellidos: {{apellidos}}</p>
-    <p>Edad:{{edad}}</p>
+<p>Nombre: {{nombre}}</p>
+<p>Apellidos: {{apellidos}}</p>
+<p>Edad:{{edad}}</p>
 ```
 ### Comentarios
 Para crear comentarios:
