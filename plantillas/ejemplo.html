@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>Ejemplo</title>
 </head>
-
 <body>
     <div>
-        {#Comentario#}
+        {#Variables#}
         <p>Nombre: {{nombre}}</p>
         <p>Apellidos: {{apellidos}}</p>
         <p>Edad:{{edad}}</p>
 
+        {#if/elses#}
+        {% if nombre == 'Zacarias' %}
+            <p>Se llama Zacarias</p>
+        {% else %}
+            <p>No se llama Zacarias</p>
+        {% endif %}
     </div>
 </body>
 </html>
