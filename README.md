@@ -16,8 +16,8 @@ Para iniciar el proyecto hay que ejecutar el siguiente comando:
 - En la carpeta **/plantillas** es donde se guardan las plantillas html que se usaran para crear el pdf.
 - En la carpeta **/pdf** es donde se guardará el pdf.
 - En la carpeta **/src** se encuentran los siguientes archivos:
- - **main.rs**: se obtinenen los datos que vamos a substituir en el pdf de la api de dummyjson.
- - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros.
+    - **main.rs**: se obtinenen los datos que vamos a substituir en el pdf de la api de dummyjson.
+    - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros.
 
 ## Minijinja
 
