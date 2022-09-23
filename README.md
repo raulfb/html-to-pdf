@@ -20,6 +20,7 @@ Para iniciar el proyecto hay que ejecutar el siguiente comando:
 - En la carpeta **/src** se encuentran los siguientes archivos:
     - **main.rs**: se obtinenen los datos que vamos a substituir en el pdf de la api de dummyjson.
     - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros. Para ejecutar este archivo hay que descomentar la linea # path = "src/ejemploSencillo.rs" que está en el archivo Cargo.toml.
+    - **ejemploProducto.rs**: se obtienen los datos que vamos a substituir los definimos nosotros. Para ejecutar este archivo hay que descomentar la linea # path = "src/ejemploProducto.rs" que está en el archivo Cargo.toml.Este ejemplo fue realizado para probar el bucle for.
 
 ## Minijinja
 
@@ -47,6 +48,16 @@ Ejemplo de como se usaría un if/else:
     <p>No se llama Zacarias</p>
 {% endif %}
 ```
+
+### bucle for
+Ejemplo de como se haría un bucle:
+```html
+{% for imagen in imagenes %}
+    {{ imagen }}
+    <br>
+{% endfor %}
+```
+
 ## Documentación
 [Minijinja](https://docs.rs/minijinja/latest/minijinja/index.html)
 [wkhtmltopdf](https://wkhtmltopdf.org/)

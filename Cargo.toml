@@ -14,5 +14,6 @@ dotenv = "0.15.0"
 
 [[bin]]
 name = "html-to-pdf"
-path = "src/main.rs" 
+# path = "src/main.rs" 
+path = "src/ejemploProducto.rs" 
 # path = "src/ejemploSencillo.rs"

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Producto</title>
+</head>
+<body>
+    <div>
+        {#Variables#}
+        <p>Nombre producto: {{nombre}}</p>
+        {% if categoria == 'smartphones' %}
+            <p>Categoria: Telefonía</p>
+            {% else %}
+            <p>Categoria:{{categoria}}</p>
+        {% endif %}
+
+        <p>Precio:{{precio}}</p>
+        <p>Imagenes: {{imagenes[3]}}</p>
+        <p>
+            {% for imagen in imagenes %}
+            <img src="{{ imagen }}" alt="imagen"/>
+                <br>
+            {% endfor %}
+        </p>
+    </div>
+</body>
+</html>
