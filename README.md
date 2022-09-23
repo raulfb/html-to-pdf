@@ -1,5 +1,5 @@
 # html-to-pdf
-Generar un PDF a partir de una plantilla html en la que substituimos una serie de datos usando minijinja.
+Generar un PDF a partir de una plantilla html en la que substituimos una serie de datos usando minijinja. Esos datos pueden ser obtenidos de una API.
 
 ## Requisitos.
 
@@ -11,11 +11,13 @@ Para iniciar el proyecto hay que ejecutar el siguiente comando:
 ```rust 
     cargo run
 ```
-
 ## Estructura
 
-En la carpeta /plantillas es donde se guardan las plantillas html que se usaran para crear el pdf.
-En la carpeta /pdf es donde se guardará el pdf.
+- En la carpeta **/plantillas** es donde se guardan las plantillas html que se usaran para crear el pdf.
+- En la carpeta **/pdf** es donde se guardará el pdf.
+- En la carpeta **/src** se encuentran los siguientes archivos:
+ - **main.rs**: se obtinenen los datos que vamos a substituir en el pdf de la api de dummyjson.
+ - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros.
 
 ## Minijinja
 
