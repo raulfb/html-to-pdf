@@ -19,7 +19,7 @@ struct Usuario {
 async fn main() {
     
     // Consultamos los datos de la API dummyjson.com
-    let url = "https://dummyjson.com/users/1".to_string();
+    let url = "https://dummyjson.com/users/1";
     let res = reqwest::get(url).await.unwrap();
 
     match res.status() {
