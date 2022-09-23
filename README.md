@@ -45,11 +45,7 @@ Ejemplo de como se usaría un if/else:
     <p>No se llama Zacarias</p>
 {% endif %}
 ```
-## Notas
-Para que funcione correctamente hay que ejecutar el comando cargo run desde /src
-
 ## Documentación
 [Minijinja](https://docs.rs/minijinja/latest/minijinja/index.html)
 [wkhtmltopdf](https://wkhtmltopdf.org/)
 [crate wkhtmltopdf](https://crates.io/crates/wkhtmltopdf)
-

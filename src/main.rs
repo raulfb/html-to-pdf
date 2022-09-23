@@ -38,7 +38,7 @@ async fn main() {
 fn generar_pdf(user: &Usuario){
    
     // Leemos la plantilla html
-    let plantilla_html = fs::read_to_string("../plantillas/ejemplo.html").expect("Error al leer el archivo.");
+    let plantilla_html = fs::read_to_string("./plantillas/ejemplo.html").expect("Error al leer el archivo.");
    
     // Creamos la plantilla prueba
     let mut env = Environment::new();
@@ -62,6 +62,6 @@ fn generar_pdf(user: &Usuario){
    .expect("Error al crear el pdf");
     
     // Guardamos el PDF
-    pdfout.save("../pdf/prueba.pdf").expect("Error al guardar el pdf!");
+    pdfout.save("./pdf/prueba.pdf").expect("Error al guardar el pdf!");
     println!("PDF guardado correctamente como: prueba.pdf");
 }
