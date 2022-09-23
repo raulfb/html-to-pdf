@@ -3,6 +3,7 @@ use std::fs;
 use minijinja::{Environment, context};
 use reqwest;
 use serde::{Deserialize, Serialize};
+use dotenv::dotenv;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")] 
@@ -17,9 +18,11 @@ struct Usuario {
 
 #[tokio::main]
 async fn main() {
-    
+    // Obtenemos la url de la api del .env
+    dotenv().ok();
+    let url_api = std::env::var("API_URL").expect("No se pudo acceder al valor de la variable de entorno API_URL");
     // Consultamos los datos de la API dummyjson.com
-    let url = "https://dummyjson.com/users/1";
+    let url = url_api;
     let res = reqwest::get(url).await.unwrap();
 
     match res.status() {

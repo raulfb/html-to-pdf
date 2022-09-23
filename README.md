@@ -5,6 +5,8 @@ Generar un PDF a partir de una plantilla html en la que substituimos una serie d
 
 Debido a que usamos la libreria wkhtmltopdf para crear el pdf tenemos que tener instalado en nuestro equipo el programa wkhtmltopdf. Se puede descargar desde su [web](https://wkhtmltopdf.org/downloads.html) 
 
+## Configurar .env
+Crear un archivo .env con el contenido del archivo example.env 
 ## Iniciar proyecto
 
 Para iniciar el proyecto hay que ejecutar el siguiente comando:
