@@ -28,7 +28,7 @@ async fn main() {
     match res.status() {
         reqwest::StatusCode::OK => {
             match res.json::<Usuario>().await {
-                Ok(parseado) => generar_pdf(&parseado),
+                Ok(parseado) => reenderizar_plantilla(&parseado),
                 Err(error) => println!("{:?}",error)
             }
         }
@@ -38,8 +38,7 @@ async fn main() {
     }    
 }
 
-fn generar_pdf(user: &Usuario){
-   
+fn reenderizar_plantilla(user: &Usuario){
     // Leemos la plantilla html
     let plantilla_html = fs::read_to_string("./plantillas/ejemplo.html").expect("Error al leer el archivo.");
    
@@ -50,9 +49,13 @@ fn generar_pdf(user: &Usuario){
     // Seleccionamos la plantilla prueba
     let plantilla_prueba = env.get_template("prueba").unwrap();
    
-    // Reenderizamos el PDF pasándole los valores que queremos substituir
-    let pdf_renderizado= plantilla_prueba.render(context!(nombre => user.first_name,apellidos =>user.last_name,edad=>user.age)).unwrap();
-   
+    // Renderizamos el html pasándole los valores que queremos substituir
+    let html_renderizado= plantilla_prueba.render(context!(nombre => user.first_name,apellidos =>user.last_name,edad=>user.age)).expect("Error al reenderizar el html.");
+    crear_pdf(html_renderizado)
+
+}
+
+fn crear_pdf(pdf:String){
     // Iniciamos la aplicacion wkhtmltopdf para crear el pdf
     let pdf_app = PdfApplication::new().expect("Error al iniciar la aplicacion PDF.");
    
@@ -61,10 +64,10 @@ fn generar_pdf(user: &Usuario){
    .orientation(Orientation::Landscape)
    .margin(Size::Inches(2))
    .title("PDF de prueba")
-   .build_from_html(pdf_renderizado)
+   .build_from_html(pdf)
    .expect("Error al crear el pdf");
     
     // Guardamos el PDF
     pdfout.save("./pdf/prueba.pdf").expect("Error al guardar el pdf!");
-    println!("PDF guardado correctamente como: prueba.pdf");
+    println!("PDF guardado correctamente como: prueba.pdf!");
 }

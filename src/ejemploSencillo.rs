@@ -14,8 +14,8 @@ async fn main() {
     // seleccionamos la plantilla prueba
     let plantilla_prueba = env.get_template("prueba").unwrap();
     
-    // Reenderizamos el pdf pasandole los valores que queremos substituir
-    let pdf_renderizado= plantilla_prueba.render(context!(nombre => "Zacarias",apellidos =>"Pastor Díaz",edad=>68)).unwrap();
+    // Renderizamos el html pasandole los valores que queremos substituir
+    let html_renderizado= plantilla_prueba.render(context!(nombre => "Zacarias",apellidos =>"Pastor Díaz",edad=>68)).unwrap();
     
     // Iniciamos la aplicacion wkhtmltopdf para crear el PDF
     let pdf_app = PdfApplication::new().expect("Error al iniciar la aplicacion PDF.");
@@ -25,7 +25,7 @@ async fn main() {
         .orientation(Orientation::Landscape)
         .margin(Size::Inches(2))
         .title("PDF de prueba")
-        .build_from_html(pdf_renderizado)
+        .build_from_html(html_renderizado)
         .expect("Error al crear el pdf");
 
     // Guardamos el PDF
