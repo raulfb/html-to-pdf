@@ -19,7 +19,7 @@ Para iniciar el proyecto hay que ejecutar el siguiente comando:
 - En la carpeta **/pdf** es donde se guardará el pdf.
 - En la carpeta **/src** se encuentran los siguientes archivos:
     - **main.rs**: se obtinenen los datos que vamos a substituir en el pdf de la api de dummyjson.
-    - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros.
+    - **ejemploSencillo.rs**: se obtienen los datos que vamos a substituir los definimos nosotros. Para ejecutar este archivo hay que descomentar la linea # path = "src/ejemploSencillo.rs" que está en el archivo Cargo.toml.
 
 ## Minijinja
 
